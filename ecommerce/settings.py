@@ -170,7 +170,7 @@ AWS_QUERYSTRING_AUTH = False
 
 
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 3,
+    'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
