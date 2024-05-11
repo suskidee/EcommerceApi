@@ -88,6 +88,7 @@ class Order(models.Model):
         total = sum([item.quantity * item.product.price for item in items])
         return total
 
+
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT, related_name="items")
     product = models.ForeignKey(Product, on_delete=models.PROTECT)

@@ -27,9 +27,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Contact API",
+      title="EcomApi",
       default_version='v1',
-      description="An API for contacts",
+      description="An API for e-commerce",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="suskidee@gmail.com"),
       license=openapi.License(name="Test License"),
