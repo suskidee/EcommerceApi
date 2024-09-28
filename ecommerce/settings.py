@@ -186,10 +186,19 @@ SIMPLE_JWT = {
 #     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyMjIzOTQzLCJpYXQiOjE2NzIxMzc1NDMsImp0aSI6ImQxYjcxNzBiMjgyNTRlNjg4ZjgwNTM0NGViMTYzYjU5IiwidXNlcl9pZCI6OH0.garu_BNiSM5fB48TRbRMXypgECuSmt4ErveOVsynISQ"
 
 DJOSER = {
+    "PASSWORD_RESET_CONFIRM_URL": "http://localhost:8000/auth/user/reset_password_confirm/{uid}/{token}/",
+    'ACTIVATION_URL': 'http://localhost:8000/auth/activate/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': 'http://localhost:8000/auth/username/reset/confirm/{uid}/{token}',
+
+    'SEND_ACTIVATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': True,
+    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SERIALIZERS': {
-        'user_create': "core.serializers.MyUserCreateSerializer"
+        'user_create': "customuser.serializers.MyUserCreateSerializer"
     }
 }
+
 FLW_SEC_KEY = os.getenv("FLW_SEC_KEY")
 
 SWAGGER_SETTINGS = {
@@ -201,3 +210,13 @@ SWAGGER_SETTINGS = {
         }
     }
 }
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_USE_TSL = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = os.getenv("EMAIL")
+EMAIL_HOST_PASSWORD = os.getenv("PASSWORD")
+DEFAULT_FROM_EMAIL = os.getenv("EMAIL")
