@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["134.209.21.134", "localhost", "127.0.0.1",]
 
 # Application definition
 
@@ -108,7 +108,6 @@ DATABASES = {
         'PASSWORD': os.getenv("DB_PASSWORD"),
         'HOST': os.getenv("HOST"),
         'PORT': os.getenv("PORT"),
-        'SSL_MODE': os.getenv("SSL_MODE"),
     }
 }
 
@@ -163,17 +162,12 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'core.User'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'frontend/build/static'
-]
-
 # REST_FRAMEWORK = {
 #     'PAGE_SIZE': 3
 # }
 
 
-AWS_QUERYSTRING_AUTH = False
+# AWS_QUERYSTRING_AUTH = False
 # AWS_S3_FILE_OVERWRITE = False
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # AWS_ACCESS_KEY_ID  = os.environ.get('AWS_ACCESS_KEY')
@@ -198,9 +192,9 @@ SIMPLE_JWT = {
 #     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyMjIzOTQzLCJpYXQiOjE2NzIxMzc1NDMsImp0aSI6ImQxYjcxNzBiMjgyNTRlNjg4ZjgwNTM0NGViMTYzYjU5IiwidXNlcl9pZCI6OH0.garu_BNiSM5fB48TRbRMXypgECuSmt4ErveOVsynISQ"
 
 DJOSER = {
-    "PASSWORD_RESET_CONFIRM_URL": "http://localhost:8000/auth/user/reset_password_confirm/{uid}/{token}/",
-    'ACTIVATION_URL': 'http://localhost:8000/auth/activate/{uid}/{token}',
-    'USERNAME_RESET_CONFIRM_URL': 'http://localhost:8000/auth/username/reset/confirm/{uid}/{token}',
+    "PASSWORD_RESET_CONFIRM_URL": "http:134.209.21.134:8808/auth/user/reset_password_confirm/{uid}/{token}/",
+    'ACTIVATION_URL': 'http://134.209.21.134:8808/auth/activate/{uid}/{token}',
+    'USERNAME_RESET_CONFIRM_URL': 'http://134.209.21.134:8808/auth/username/reset/confirm/{uid}/{token}',
 
     'SEND_ACTIVATION_EMAIL': True,
     'SEND_CONFIRMATION_EMAIL': True,
