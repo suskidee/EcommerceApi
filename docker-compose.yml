@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_DB=${NAME}
+        - POSTGRES_USER=${USER}
+        - POSTGRES_PASSWORD=${DB_PASSWORD}
+    container_name: EcommerceApi_postgresql_container
+
+  app:
+    build: .
+    volumes:
+      - .:/EcommerceApi
+    ports:
+      - 8808:8808
+    image: app:EcommerceApi_image
+    container_name: EcommerceApi_container
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8808"
+    depends_on:
+      - db

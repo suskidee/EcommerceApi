@@ -17,7 +17,7 @@ django-filter==21.1
 django-storages==1.13.1
 django-templated-mail==1.1.1
 djangorestframework==3.13.1
-# djangorestframework-simplejwt==5.2.2
+djangorestframework-simplejwt==5.2.2
 djoser==2.1.0
 drf-nested-routers==0.93.4
 filelock==3.8.0
@@ -31,10 +31,10 @@ oauthlib==3.2.0
 Pillow==9.1.1
 pipenv==2022.10.12
 platformdirs==2.5.2
-psycopg2==2.9.3
+psycopg2==2.9.9
+psycopg2-binary==2.9.9
 pycparser==2.21
 PyJWT==2.4.0
-mysqlclient==2.2.4
 python-dateutil==2.8.2
 python3-openid==3.2.0
 python-dotenv==1.0.1

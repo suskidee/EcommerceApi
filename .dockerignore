@@ -1,0 +1,9 @@
+venv/
+.vscode/
+.idea/
+db.sqlite3
+staticfiles/
+image/
+media/
+img/
+static

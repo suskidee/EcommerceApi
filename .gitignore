@@ -7,3 +7,5 @@ media/
 **/migrations/*.py
 !**/migrations/__init__.py
 staticfiles/
+static/
+img/
